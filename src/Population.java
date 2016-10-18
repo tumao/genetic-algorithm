@@ -1,17 +1,17 @@
 /**
- * ç§ç¾¤ç±»ï¼Œå¹¶ä¸”ç§ç¾¤ç±»ä¸­åŒ…å«ä¸ªä½“
+ * ÖÖÈºÀà£¬²¢ÇÒÖÖÈºÀàÖĞ°üº¬¸öÌå
  * @author changchun
  *
  */
 public class Population
 {
-        private Individual [] individuals;                  // ä¸€ä¸ªç§ç¾¤ä¸­æ€»çš„ä¸ªä½“
+        private Individual [] individuals;                  // Ò»¸öÖÖÈºÖĞ×ÜµÄ¸öÌå
 //        private int individualSize = 60;
 
         /**
-         * æ„é€ å‡½æ•°
-         * @param size  ç§ç¾¤çš„å¤§å°
-         * @param initalize     æ˜¯å¦è¿›è¡Œåˆå§‹åŒ–
+         * ¹¹Ôìº¯Êı
+         * @param size  ÖÖÈºµÄ´óĞ¡
+         * @param initalize     ÊÇ·ñ½øĞĞ³õÊ¼»¯
          */
         public Population (int size, boolean initialize)
         {
@@ -22,14 +22,14 @@ public class Population
                         for (int i = 0; i < size; i++)
                         {
                                 Individual newId = new Individual();
-                                newId.generateIndividual();                                             // ä¸ºindividual ç”Ÿæˆä¸€ä¸ªåŸºå› åºåˆ—
-                                saveIndividual (newId, i);                                                   // å°†å®ä¾‹åŒ–åç­‰æ“ä½œåçš„ä¸ªä½“å­˜å‚¨åˆ°ç§ç¾¤ä¸­
+                                newId.generateIndividual();                                             // Îªindividual Éú³ÉÒ»¸ö»ùÒòĞòÁĞ
+                                saveIndividual (newId, i);                                                   // ½«ÊµÀı»¯ºóµÈ²Ù×÷ºóµÄ¸öÌå´æ´¢µ½ÖÖÈºÖĞ
                         }
                 }
         }
         
         /**
-         * å°†ä¸€ä¸ªä¸ªä½“çš„å®ä¾‹ä¿å­˜åœ¨æ•°ç»„ä¸­
+         * ½«Ò»¸ö¸öÌåµÄÊµÀı±£´æÔÚÊı×éÖĞ
          * @param id
          * @param index
          */
@@ -39,7 +39,7 @@ public class Population
         }
         
         /**
-         * è·å–ç§ç¾¤çš„å¤§å°
+         * »ñÈ¡ÖÖÈºµÄ´óĞ¡
          * @return
          */
         public int getSize ()
@@ -48,7 +48,7 @@ public class Population
         }
         
         /**
-         * è·å–ä¸€ä¸ªç§ç¾¤ä¸­çš„ä¸ªä½“
+         * »ñÈ¡Ò»¸öÖÖÈºÖĞµÄ¸öÌå
          * @param index
          * @return
          */
@@ -59,7 +59,7 @@ public class Population
 
       
         /**
-         * è·å–ç§ç¾¤ä¸­æœ€ä¼˜çš„ä¸ªä½“ï¼ˆé€‚åº”åº¦æœ€é«˜çš„ä¸ªä½“ï¼‰
+         * »ñÈ¡ÖÖÈºÖĞ×îÓÅµÄ¸öÌå£¨ÊÊÓ¦¶È×î¸ßµÄ¸öÌå£©
          */
         public Individual getFittest ()
         {
@@ -76,7 +76,7 @@ public class Population
         }
         
         /**
-         * è¾“å‡ºç§ç¾¤ä¸­æœ€ä¼˜ç§€çš„ä¸ªä½“
+         * Êä³öÖÖÈºÖĞ×îÓÅĞãµÄ¸öÌå
          */
         public void printFittest()
         {

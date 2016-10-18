@@ -1,15 +1,15 @@
 /**
- * ä¸ªä½“ç±»ï¼Œä¸ªä½“ä¸­åŒ…å«è‹¥å¹²ä¸ªåŸºå› 
+ * ¸öÌåÀà£¬¸öÌåÖĞ°üº¬Èô¸É¸ö»ùÒò
  * @author changchun
  *
  */
 public class Individual 
 {
-        private int genSize = 60;          // æ¯ä¸ªä¸ªä½“åŒ…å«åŸºå› çš„æ•°é‡
-        private byte [] gens = new byte [genSize];      // å­˜å‚¨åŸºå› åºåˆ—
+        private int genSize = 60;          // Ã¿¸ö¸öÌå°üº¬»ùÒòµÄÊıÁ¿
+        private byte [] gens = new byte [genSize];      // ´æ´¢»ùÒòĞòÁĞ
         
         /**
-         * ç”Ÿæˆä¸€ä¸ªå¸¦æœ‰åŸºå› åºåˆ—çš„ä¸ªä½“
+         * Éú³ÉÒ»¸ö´øÓĞ»ùÒòĞòÁĞµÄ¸öÌå
          * @param size
          */
         public void generateIndividual ()
@@ -21,7 +21,7 @@ public class Individual
         }
         
         /**
-         * è·å–ä¸€ç»„åŸºå› çš„é•¿åº¦
+         * »ñÈ¡Ò»×é»ùÒòµÄ³¤¶È
          * @return
          */
         public int getSize ()
@@ -30,7 +30,7 @@ public class Individual
         }
         
         /**
-         * è®¾ç½®åŸºå› ï¼ˆä¾‹å¦‚ï¼šåŸºå› çš„æŸä¸ªä½ç½®çªå˜ï¼Œé‡æ–°è®¾ç½®åŸºå› ï¼‰
+         * ÉèÖÃ»ùÒò£¨ÀıÈç£º»ùÒòµÄÄ³¸öÎ»ÖÃÍ»±ä£¬ÖØĞÂÉèÖÃ»ùÒò£©
          * @param index
          * @param gen
          */
@@ -40,7 +40,7 @@ public class Individual
         }
         
         /**
-         * è·å–åŸºå› ç»„ä¸­çš„åŸºå› 
+         * »ñÈ¡»ùÒò×éÖĞµÄ»ùÒò
          * @param index
          * @return
          */
@@ -50,7 +50,7 @@ public class Individual
         }
         
         /**
-         * è·å–å½“å‰individualçš„é€‚åº”åº¦
+         * »ñÈ¡µ±Ç°individualµÄÊÊÓ¦¶È
          * @return
          */
         public int getFitness()

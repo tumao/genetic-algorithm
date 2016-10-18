@@ -1,20 +1,20 @@
 /**
- * åŸºå› çš„ä¸€äº›æ“ä½œ
+ * »ùÒòµÄÒ»Ğ©²Ù×÷
  * @author changchun
  *
  */
 public class Algorithm 
 {
-        private static byte [] destination = new byte [60];    // è¯¥ç§ç¾¤æœ€ç»ˆè¦è¾¾åˆ°çš„ç›®çš„
+        private static byte [] destination = new byte [60];    // ¸ÃÖÖÈº×îÖÕÒª´ïµ½µÄÄ¿µÄ
         
-        private static double pc = 0.5;        // æŸ“è‰²ä½“çš„äº¤å‰æ¦‚ç‡
+        private static double pc = 0.5;        // È¾É«ÌåµÄ½»²æ¸ÅÂÊ
         
-        private static double pm = 0.02;        // æŸ“è‰²ä½“çš„å˜å¼‚çš„æ¦‚ç‡
+        private static double pm = 0.02;        // È¾É«ÌåµÄ±äÒìµÄ¸ÅÂÊ
         
-        private static int tournamentSize = 5;             // æ·˜æ±°æ•°ç»„çš„å¤§å°
+        private static int tournamentSize = 5;             // ÌÔÌ­Êı×éµÄ´óĞ¡
         
         /**
-         * ä¸ºç§ç¾¤è®¾ç½®ä¸€ä¸ªæœ€ç»ˆç›®æ ‡,å¹¶ä¸”å°†ä¸€ä¸ªå­—ç¬¦ä¸²è½¬åŒ–ä¸ºäºŒè¿›åˆ¶æ•°ç»„
+         * ÎªÖÖÈºÉèÖÃÒ»¸ö×îÖÕÄ¿±ê,²¢ÇÒ½«Ò»¸ö×Ö·û´®×ª»¯Îª¶ş½øÖÆÊı×é
          * @param str
          */
         public static void setDestination (String str)
@@ -29,7 +29,7 @@ public class Algorithm
                         {
                                 destination [i] = Byte.parseByte( singleChar);
                         }
-                        else                                                                                            // å¦‚æœå­—ç¬¦ä¸²ä¸­çš„å­—ç¬¦ï¼Œä¸æ˜¯ç”±0ã€1ç»„æˆï¼Œé‚£ä¹ˆé0ã€1çš„éƒ½è½¬ä¸º0
+                        else                                                                                            // Èç¹û×Ö·û´®ÖĞµÄ×Ö·û£¬²»ÊÇÓÉ0¡¢1×é³É£¬ÄÇÃ´·Ç0¡¢1µÄ¶¼×ªÎª0
                         {
                                 destination [i] = 0;
                         }
@@ -37,7 +37,7 @@ public class Algorithm
         }
         
         /**
-         * ä¸¤ä¸ªä¸ªä½“äº¤å‰
+         * Á½¸ö¸öÌå½»²æ
          * @param indiv1
          * @param indiv2
          * @return
@@ -64,7 +64,7 @@ public class Algorithm
         }
         
         /**
-         * ä¸ªä½“çš„å˜å¼‚
+         * ¸öÌåµÄ±äÒì
          * @param indiviudla
          * @return
          */
@@ -72,7 +72,7 @@ public class Algorithm
         {
                 for (int i = 0; i < individual.getSize(); i++)
                 {
-                        if ( Math.random() < pm)        // å˜å¼‚æ˜¯éšæœºçš„ï¼Œå¦‚æœå½“å‰æƒ…å†µå°äºå˜å¼‚çš„æ¦‚ç‡åˆ™å˜å¼‚
+                        if ( Math.random() < pm)        // ±äÒìÊÇËæ»úµÄ£¬Èç¹ûµ±Ç°Çé¿öĞ¡ÓÚ±äÒìµÄ¸ÅÂÊÔò±äÒì
                         {
                                 byte gen = (byte) Math.round (Math.random ());
                                 individual.setGens(i, gen);
@@ -81,22 +81,22 @@ public class Algorithm
         }
 
         /**
-         * ç§ç¾¤çš„è¿›åŒ–
+         * ÖÖÈºµÄ½ø»¯
          * @param pop
          */
         public static Population evolution (Population pop)
         {
-                Population newPop = new Population (pop.getSize(), false);      // æ–°å»ºä¸€ä¸ªç§ç¾¤ï¼Œå’ŒåŸå§‹ç§ç¾¤å¤§å°ç›¸åŒï¼Œç”¨æ¥å­˜å‚¨è¿›åŒ–åçš„ç§ç¾¤
+                Population newPop = new Population (pop.getSize(), false);      // ĞÂ½¨Ò»¸öÖÖÈº£¬ºÍÔ­Ê¼ÖÖÈº´óĞ¡ÏàÍ¬£¬ÓÃÀ´´æ´¢½ø»¯ºóµÄÖÖÈº
                 
                 for (int i = 0; i < pop.getSize(); i++ )
                 {
                         Individual indiv1 = select (pop);
                         Individual indiv2 = select (pop);
-                        Individual newIndividual = cross (indiv1, indiv2);      // äº¤é…äº§ç”Ÿæ–°çš„ä¸ªä½“
-                        newPop.saveIndividual(newIndividual, i);                // å°†äº¤å‰åçš„æ–°çš„ä¸ªä½“å­˜å…¥ç§ç¾¤
+                        Individual newIndividual = cross (indiv1, indiv2);      // ½»Åä²úÉúĞÂµÄ¸öÌå
+                        newPop.saveIndividual(newIndividual, i);                // ½«½»²æºóµÄĞÂµÄ¸öÌå´æÈëÖÖÈº
                 }
                 
-                for (int j = 0; j < newPop.getSize(); j++)                              // çªå˜
+                for (int j = 0; j < newPop.getSize(); j++)                              // Í»±ä
                 {
                         mutation (newPop.getIndividual (j));
                 }
@@ -104,7 +104,7 @@ public class Algorithm
         }
         
         /**
-         * è·å–ç§ç¾¤è¿›åŒ–çš„ç›®æ ‡
+         * »ñÈ¡ÖÖÈº½ø»¯µÄÄ¿±ê
          */
         public static byte [] getDest ()
         {
@@ -112,20 +112,20 @@ public class Algorithm
         }
         
         /**
-         * åœ¨ç¾¤ç»„ä¸­æ‰¾å‡ºä¸€ä¸ªç›¸å¯¹ä¼˜ç§€çš„ä¸ªä½“
+         * ÔÚÈº×éÖĞÕÒ³öÒ»¸öÏà¶ÔÓÅĞãµÄ¸öÌå
          * @param pop
          * @return
          */
         public static Individual select (Population pop)
         {
-                Population tournament = new Population (tournamentSize, false);  // æ·˜æ±°ç¾¤ç»„
+                Population tournament = new Population (tournamentSize, false);  // ÌÔÌ­Èº×é
 
                 for (int i = 0; i < tournamentSize; i++)
                 {
-                       int randId = (int) (Math.random() * pop.getSize());      // éšæœºç”Ÿæˆä¸€ä¸ªid
-                       tournament.saveIndividual (pop.getIndividual (randId), i);       // æŠŠéšæœºçš„ä¸€ä¸ªindividual å­˜å‚¨åˆ°æ·˜æ±°ç¾¤ç»„ä¸­
+                       int randId = (int) (Math.random() * pop.getSize());      // Ëæ»úÉú³ÉÒ»¸öid
+                       tournament.saveIndividual (pop.getIndividual (randId), i);       // °ÑËæ»úµÄÒ»¸öindividual ´æ´¢µ½ÌÔÌ­Èº×éÖĞ
                 }
-                Individual newIndividual = tournament.getFittest();     // ä¿ç•™æ·˜æ±°æ•°ç»„ä¸­é€‚åº”åº¦æœ€é«˜çš„ä¸ªä½“
+                Individual newIndividual = tournament.getFittest();     // ±£ÁôÌÔÌ­Êı×éÖĞÊÊÓ¦¶È×î¸ßµÄ¸öÌå
                 return newIndividual;
         }
         
